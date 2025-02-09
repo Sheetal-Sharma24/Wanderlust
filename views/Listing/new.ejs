@@ -1,0 +1,78 @@
+<% layout("Listing/layouts/boilerplate") %>
+<body>
+    <div class="row mt-2 offset-2">
+        <h2>Create a New Lsiting: </h2>
+        
+            <form method="post" action="/listing" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="col-8">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" class="form-control" placeholder="Add a catcy title" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="des" class="form-label">Description</label>
+                    <textarea name="listing[des]" class="form-control" rows="8" cols="60" placeholder="Enter Description"  required></textarea>
+                    <div class="invalid-feedback">
+                        Description required.
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="img" class="form-label">Listing Image Link</label>
+                    <input name="listing[img]" class="form-control" type="file" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" class="form-control" placeholder="1500" required>
+                        <div class="invalid-feedback">
+                            Price is required.
+                          </div>
+                    </div>
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" class="form-control" placeholder="India" required>
+                        <div class="invalid-feedback">
+                            Country name is required
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <label for="cat">Select Category</label>
+                         <select id="cat" name="listing[category]" style="height: 35px; width: 150px; margin-top: 0.6rem;">
+                            <option value="Rooms">Rooms</option>
+                            <option value="Trending">Trending</option>
+                            <option value="Iconic Cities">Iconic Cities</option>
+                            <option value="Mountains">Mountains</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Amazing Pools">Amazing Pools</option>
+                            <option value="Domes">Domes</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Lakes">Lakes</option>
+                            <option value="Breakfast-lunch">Breakfast-lunch</option>
+                            <option value="Historical-Homes">Historical-Homes</option>
+                            <option value="Play">Play</option>
+                         </select>
+                    </div>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="loc" class="form-label">Location</label>
+                    <input placeholder="Jaipur,Rajasthan" class="form-control" name=listing[loc] required>  
+                    <div class="invalid-feedback">
+                         Location is required
+                      </div>  
+                </div>
+                <button class="btn" style="background-color:#fe424d; color:white">Add</button>
+            </div><br>
+         </form>
+    </div>
+
+</body>
+</html>

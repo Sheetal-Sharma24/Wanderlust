@@ -1,0 +1,44 @@
+<% layout("Listing/layouts/boilerplate") %>
+<body>
+  <div class="row mt-2 offset-2">
+    <h3>Details about to edit : </h3>
+    <form method="post" action="/listing/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="col-8">
+            <div class="mb-2">
+                <label for="title" class="form-label">Title</label>
+                <input value="<%= listing.title%>" name="Listing[title]" class="form-control" required>
+            </div>
+            <div class="mb-2">
+                <label for="title" class="form-label">Description</label>
+                <textarea name="Listing[des]" rows="8" cols="60" class="form-control" required><%= listing.des%></textarea>
+            </div>
+            <div class="mb-2">
+                <div>Original listing image</div>
+                <img src="<%= Originalurl %> " style="height: 150px;">
+            </div>
+            <div class="mb-2">
+                <label for="title" class="form-label">Upload new Image</label>
+                <input type="file" name="Listing[img]" class="form-control">
+            </div>
+            <div class="row">
+                <div class="mb-2 col-md-4 col-sm-8">
+                    <label for="title" class="form-label">Price</label>
+                    <input value="<%= listing.price.toLocaleString("en-IN") %>" name="Listing[price]" type="number" class="form-control" required>
+                </div>
+                <div class="mb-2 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input value="<%= listing.country%>" name="Listing[country]" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="title" class="form-label">Location</label>
+                <input value="<%= listing.loc%>" name="Listing[loc]" class="form-control" required>
+            </div>
+            
+            <button class="btn" style="background-color:#fe424d; color:white">Edit</button>
+        </div>
+    </form>
+  </div>
+  <br>
+</body>
+</html>
